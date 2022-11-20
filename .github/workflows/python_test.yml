@@ -37,7 +37,7 @@ jobs:
     - name: Commit files
       run: |
         git config --local user.email "vidyagowda005@gmail.com"
-        git config --local user.name "visygowda159"
+        git config --local user.name "vidyagowda159"
         git add -A
         git commit -a -m "Add changes"
     - name: Push changes
@@ -45,3 +45,6 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
+    - name: Pulling code to project
+      run: |
+        git pull "https://github.com/vidyagowda159/Sample_actions.git"

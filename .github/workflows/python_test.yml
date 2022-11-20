@@ -33,7 +33,7 @@ jobs:
     - name: Commit Changes
       run: |
         git config user.name "${{ github.actor }}"\
-            config user.email "vidyagowda005@gmail.com"\
+        git config user.email "vidyagowda005@gmail.com"\
             README.md\
             index.js\
             commit "_message_"

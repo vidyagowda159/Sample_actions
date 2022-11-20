@@ -30,24 +30,13 @@ jobs:
     - name: Test with pytest
       run: |
         pytest -vs --html="report1.html"
-    - name: Commit Changes
+    - name: Commit files
       run: |
-        git config --global user.name "${{ github.actor }}"
-        git config --global user.email "vidyagowda005@gmail.com"
-        git add -A
-        git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
-    - name: commiting the files
-      # executing the steps irrespective of the status of previous step
-      if: ${{ always() }}
-      run: |
-        git config --global user.name "vidyagowda159"
-        git config --global user.email "vidyagowda005@gmail.com"
-        git add -A
-        git diff-index --quiet HEAD
-        git commit -m "updated logs"
-    - name: pushing changes
-      if: ${{ always() }}
-      uses: ad-m/github-push-action@v0.6.0
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -a -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
-        github_token: ${{secrets.GITHUB_TOKEN}}
-        branch: master
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}

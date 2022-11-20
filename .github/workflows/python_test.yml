@@ -30,3 +30,10 @@ jobs:
     - name: Test with pytest
       run: |
         pytest -vs --html="report1.html"
+     - name: Commit Changes
+        run: |
+          git -c "user.name ${{ github.actor }}"\
+              -c "user.email vidyagowda005@gmail.com"\
+              README.md\
+              index.js\
+              commit "_message_"

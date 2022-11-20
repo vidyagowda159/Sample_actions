@@ -40,11 +40,11 @@ jobs:
       # executing the steps irrespective of the status of previous step
       if: ${{ always() }}
       run: |
-      git config --global user.name "vidyagowda159"
-      git config --global user.email "vidyagowda005@gmail.com"
-      git add -A
-      git diff-index --quiet HEAD
-      git commit -m "updated logs"
+        git config --global user.name "vidyagowda159"
+        git config --global user.email "vidyagowda005@gmail.com"
+        git add -A
+        git diff-index --quiet HEAD
+        git commit -m "updated logs"
     - name: pushing changes
       if: ${{ always() }}
       uses: ad-m/github-push-action@v0.6.0

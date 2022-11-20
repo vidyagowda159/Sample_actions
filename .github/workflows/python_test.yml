@@ -33,7 +33,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        pytest -vs --html="report1.html"
+        pytest -vs --html="report2.html"
     - name: Commit files
       run: |
         git config --local user.email "vidyagowda005@gmail.com"

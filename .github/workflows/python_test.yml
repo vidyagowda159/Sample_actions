@@ -32,8 +32,5 @@ jobs:
         pytest -vs --html="report1.html"
     - name: Commit Changes
       run: |
-        git config --global user.name "${{ github.actor }}"\
-        git config --global user.email "vidyagowda005@gmail.com"\
-            README.md\
-            index.js\
-            commit "_message_"
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "vidyagowda005@gmail.com"
